@@ -196,6 +196,33 @@ ul {
 }
 
 /* Sobre Mim */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--border-color);
+}
+
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 4rem;
+    }
+    
+    .about-image {
+        flex: 0 0 250px;
+    }
+}
+
 .about-text p {
     color: var(--text-muted);
     margin-bottom: 1rem;
