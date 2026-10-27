@@ -1,3 +1,27 @@
+// Theme Toggle (Claro / Escuro)
+const themeToggle = document.getElementById("theme-toggle");
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "light") {
+    document.documentElement.setAttribute("data-theme", "light");
+    if (themeToggle) themeToggle.setAttribute("aria-checked", "true");
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+        const currentTheme = document.documentElement.getAttribute("data-theme");
+        if (currentTheme === "light") {
+            document.documentElement.removeAttribute("data-theme");
+            themeToggle.setAttribute("aria-checked", "false");
+            localStorage.setItem("theme", "dark");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+            themeToggle.setAttribute("aria-checked", "true");
+            localStorage.setItem("theme", "light");
+        }
+    });
+}
+
 // Toggle Mobile Menu
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
